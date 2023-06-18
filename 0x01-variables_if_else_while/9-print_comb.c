@@ -8,19 +8,16 @@
  */
 int main(void)
 {
-	int digit1, digit2;
+	int d;
 
-	for (digit1 = 0; digit1 < 10; digit1++)
+	for (d = '0'; d <= '9'; d++)
 	{
-		for (digit2 = digit1; digit2 < 10; digit2++)
-		{
-			putchar(digit1 * 10 + digit2 + '0');
-			if (digit1 != 9 || digit2 != 9)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		}
+	putchar(d);
+	if (d != '9')
+	{
+	putchar(',');
+	putchar(' ');
+	}
 	}
 	putchar('\n');
 	return (0);
