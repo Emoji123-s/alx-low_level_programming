@@ -3,88 +3,53 @@
 #include "main.h"
 
 /**
- * calcMincoins -  Calculates the minimum numbe of coins
- * required to make change for an amount of cents.
+ * main - prints the minimum number of coins to
+ * make change for an amount of money
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * @cents: amount of cents to make change.
- *
- * Return: Minimum number of coins
- */
-int calcMincoins(int cents)
-{
-	int minCoins = 0;
-
-	/* Negative check statement */
-	if (cents < 0)
-	{
-		return (0);
-	}
-
-	/* Declaring variables for counting coins */
-
-	/* Calculating the minimum number of coins */
-	/* Lets use a switch statement */
-	while (cents > 0)
-	{
-		switch (cents)
-		{
-			/* First Case */
-			case 25:
-				minCoins++;
-				cents -= 25;
-				break;
-			/* Second Case */
-			case 10:
-				minCoins++;
-				cents -= 10;
-				break;
-			/* Third Case */
-			case 5:
-				minCoins++;
-				cents -= 5;
-				break;
-			/* Fourth Case */
-			case 2:
-				minCoins++;
-				cents -= 2;
-				break;
-			/* Fifth Case */
-			case 1:
-				minCoins++;
-				cents -= 1;
-				break;
-			default:
-				break;
-		}
-	}
-	return (minCoins);
-}
-
-/**
- * main - Entry point
- * @argc: Number of command-line arguments
- * @argv: Array of command-line arguments
- *
- * Return: (0) on success, (1) on error
+ * Return: 0 (Success), 1 (Error)
  */
 int main(int argc, char *argv[])
 {
-	int minCoins;
-	int cents;
+	int num, j, result;
+	/**
+	 * num as the inserted number
+	 * j as the character for the loop
+	 * result to hold the final value
+	 */
+	int coins[] = {25, 10, 5, 2, 1};
+	/* coins as an array, with the specific format integers */
 
-	/* Lets check for the number of arguments */
+	/* First conditon to check for number of arguments */
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	/* We need to convert the string to an integer */
-	cents = atoi(argv[1]);
+	/* Converting argv as a string format to an integer */
+	num = atoi(argv[1]);
+	result = 0;
 
-	/* Lets print out the minimum number of coins */
-	minCoins = calcMincoins(cents);
-	printf("%d\n", minCoins);
+	/* Second conditon to check for negative numbers */
+	if (num < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 
+	/* Iterate over the coin array until false */
+	for (j = 0; j < 5 && num >= 0; j++)
+	{
+		/* Execute as long as the conditon remains true */
+		while (num >= coins[j])
+		{
+			result++;
+			num -= coins[j];
+		}
+	}
+
+	printf("%d\n", result);
 	return (0);
 }
