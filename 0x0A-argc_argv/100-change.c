@@ -20,8 +20,6 @@ int calcMincoins(int cents)
 		return (0);
 	}
 
-	/* Declaring variables for counting coins */
-
 	/* Calculating the minimum number of coins */
 	/* Lets use a switch statement */
 	while (cents > 0)
