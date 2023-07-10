@@ -12,37 +12,37 @@
  */
 int main(int argc, char *argv[])
 {
-	int num, j, result;
 	/**
-	 * num as the inserted number
-	 * j as the character for the loop
-	 * result to hold the final value
+	 * num as the inputed number
+	 * j for incrementing in the loops
+	 * result to hold the end value
+	 * coins as an array due to specified numbers already
 	 */
+	int num, j, result;
 	int coins[] = {25, 10, 5, 2, 1};
-	/* coins as an array, with the specific format integers */
 
-	/* First conditon to check for number of arguments */
+	/* Condition to check for number of arguments passed */
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 
-	/* Converting argv as a string format to an integer */
+	/* Converting argv into an integer */
 	num = atoi(argv[1]);
 	result = 0;
 
-	/* Second conditon to check for negative numbers */
+	/* 2nd conditon to check for negative values */
 	if (num < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	/* Iterate over the coin array until false */
+	/* Iterate over the coin array until it becomes false */
 	for (j = 0; j < 5 && num >= 0; j++)
 	{
-		/* Execute as long as the conditon remains true */
+		/* Executes as long as the condition is true */
 		while (num >= coins[j])
 		{
 			result++;
