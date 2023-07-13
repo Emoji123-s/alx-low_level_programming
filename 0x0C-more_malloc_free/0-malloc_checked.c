@@ -11,12 +11,8 @@ void *malloc_checked(unsigned int b)
 {
 	void *ptr = malloc(b);
 
-	/* If malloc fails */
 	if (ptr == NULL)
-	{
 		exit(98);
-	}
 
 	return (ptr);
-	_putchar('\n');
 }
