@@ -13,17 +13,17 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strng;
+	va_list strings;
 	char *str;
 	unsigned int index;
-
 	/* Start */
-	va_start(strng, n);
+	va_start(strings, n);/* Defined macro is strings */
+
 	for (index = 0; index < n; index++)
 	{
-		str = va_arg(strng, char*);
+		str = va_arg(strings, char *);
 		/* First Condition */
-		if (strng == NULL)
+		if (str == NULL)
 			printf("(nil)");
 		else
 			printf("%s", str);
@@ -32,7 +32,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 	}
 	/* End */
-	printf('\n');
+	printf("\n");
 
-	va_end(strng);
+	va_end(strings);
 }
