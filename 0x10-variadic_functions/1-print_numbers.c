@@ -8,22 +8,23 @@
  * @n: The number of integers passed to the function.
  * @...: A variable number of numbers to be printed.
  */
-
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list nums; /* Defined macro is nums */
-	unsigned int i;
+	unsigned int index;
 
 	/* Start */
 	va_start(nums, n);
-	for (i == 0; i < n; i++)
+
+	for (index = 0; index < n; index++)
 	{
 		printf("%d", va_arg(nums, int));
 
-		if (i != (n - 1) && separator != NULL)
+		if (index != (n - 1) && separator != NULL)
 			printf("%s", separator);
 	}
 	/* End */
+
 	printf("\n");
 
 	va_end(nums);
