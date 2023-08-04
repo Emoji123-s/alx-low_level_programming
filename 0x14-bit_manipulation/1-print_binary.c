@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "main.h"
+int _putchar(char c);
 
 /**
  * print_binary - Prints the binary representation of a number
@@ -13,5 +14,5 @@ void print_binary(unsigned long int n)
 
 	char c = (n & 1) + '0';
 
-	write(1, &c, 1);
+	_putchar(c);
 }
